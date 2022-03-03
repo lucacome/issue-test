@@ -6,10 +6,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before opening a bug report, please search for the behaviour in the existing issues. 
-        
+        Before opening a bug report, please search for the behaviour in the existing issues.
+
         ---
-        
+
         Thank you for taking the time to file a bug report. To address this bug as fast as possible, we need some information.
   - type: textarea
     id: what-happened
@@ -41,6 +41,40 @@ body:
         - 1.19
         - 1.22
         - 1.23
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Type of deployment
+      description: What type of deployment are you using?
+      options:
+        - helm chart
+        - operator
+        - manual
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Which platform are you using?
+      multiple: true
+      options:
+        - minikube
+        - kind
+        - AWS
+        - GCP
+        - OpenShift
+    validations:
+      required: true
+  - type: dropdown
+    id: plus
+    attributes:
+      label: Are you using plus
+      options:
+        - 'yes'
+        - 'no'
+    validations:
+      required: true
+
   - type: textarea
     id: logs
     attributes:
